@@ -27,5 +27,16 @@
 > 用于解决根类或配置类注解过多的问题 一个`SpringbootApplication`相当于 `@Configruation` `@EnableAutoConfiguration` `ComponentScan` 并拥有他们的默认属性值
 
 
-- `@ConditionOnClass`
-> 判断是否Bean是否存在决定后期行为
+- `Conditional`
+
+> 
+```
+@ConditionalOnBean（仅仅在当前上下文中存在某个对象时，才会实例化一个Bean）
+@ConditionalOnClass（某个class位于类路径上，才会实例化一个Bean）
+@ConditionalOnExpression（当表达式为true的时候，才会实例化一个Bean）
+@ConditionalOnMissingBean（仅仅在当前上下文中不存在某个对象时，才会实例化一个Bean）
+@ConditionalOnMissingClass（某个class类路径上不存在的时候，才会实例化一个Bean）
+@ConditionalOnNotWebApplication（不是web应用）
+
+```
+
